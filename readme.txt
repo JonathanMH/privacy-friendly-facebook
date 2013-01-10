@@ -14,6 +14,8 @@ This plugin allows the placement of [facebook social plugins](https://developers
 
 The purpose of lazy loading on user interaction has positive impact on the site performance, also it allows your users to benefit from facebook plugins, like liking your page, yet doesn't force them to let facebook know, that they are browsing your site.
 
+An inspiration to this has been this plugin: http://yro.slashdot.org/story/11/09/03/0115241/heises-two-clicks-for-more-privacy-vs-facebook
+
 Right now you can:
 
 * define the facebook page url
