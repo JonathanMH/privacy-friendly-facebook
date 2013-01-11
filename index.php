@@ -29,39 +29,35 @@ class priv_fb_widget extends WP_Widget {
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 		echo $before_widget;
-		if (!empty($title)) {
+		if (!empty($instance['title'])) {
 			echo $before_title;
-			if ($instance['link_title']){
-				echo  $title;
-			}
-			else {
-				echo $title;
-			}
+			echo $instance['title'];
 			echo $after_title;
 		};
 		
 		/* create element, that the facebook plugin will be appended to */
-		echo '<div style="width: 100%;" id="'. $args['widget_id'] . '">Like on facebook</div>';
+		echo '<div style="width: 100%;" id="fb_container'. $args['widget_id'] . '">'
+			.'<a class="load" href="#">Like on facebook</a></div>';
 		
 		$params = 	array(
-			  'disable_priv'		=> 'true'
-			, 'current_element'		=> $args['widget_id']
+			  'current_element'		=> 'fb_container' . $args['widget_id']
 			, 'page_url'			=> $instance['page_url']
 			, 'type'				=> $instance['type']
 			, 'width'				=> $instance['width']
 			, 'height'				=> $instance['height']
 			, 'show_faces'			=> $instance['show_faces']
+			, 'disable_priv'		=> 'false'
 		);
 		
 		wp_enqueue_script(	'load_scripts', plugin_dir_url(__FILE__) . 'templates/load_scripts.js', array('jquery'));
 		wp_localize_script( 'load_scripts', 'Option', $params );
 
 		echo $after_widget;
-		
 	}
 	
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['page_url'] = strip_tags($new_instance['page_url']);
 		$instance['type'] = strip_tags($new_instance['type']);
 		$instance['width'] = strip_tags($new_instance['width']);

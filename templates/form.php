@@ -1,6 +1,23 @@
 <?php
 $instance = wp_parse_args( (array) $instance, $default );
 
+/* TITLE */
+$field_title_id = $this->get_field_id('title');
+$field_title = $this->get_field_name('title');
+echo "\r\n"
+	.'<p><label for="'
+	.$field_title_id
+	.'">'
+	.__('Widget Title')
+	.': </label><input type="text" id="'
+	.$field_title_id
+	.'" name="'
+	.$field_title
+	.'" value="'
+	.esc_attr( $instance['title'] )
+	.'" /></p>';
+
+
 /* PAGE URL */
 $field_page_url_id = $this->get_field_id('page_url');
 $field_page_url = $this->get_field_name('page_url');
