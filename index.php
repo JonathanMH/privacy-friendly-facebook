@@ -29,10 +29,10 @@ class priv_fb_widget extends WP_Widget {
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 		echo $before_widget;
-		if (!empty($title) == 'on') {
+		if (!empty($title)) {
 			echo $before_title;
 			if ($instance['link_title']){
-				echo '<a href="'. $permalink .'">'. $title . '</a>';
+				echo  $title;
 			}
 			else {
 				echo $title;
@@ -40,20 +40,10 @@ class priv_fb_widget extends WP_Widget {
 			echo $after_title;
 		};
 		
-		print_r($instance);
+		/* create element, that the facebook plugin will be appended to */
 		echo '<div style="width: 100%;" id="'. $args['widget_id'] . '">Like on facebook</div>';
 		
-		$params = array(
-			  'disable_priv'	=> 'true'
-			, 'current_element' => $args['widget_id']
-			, 'page_url'		=> $instance['page_url']
-			, 'type'			=> $instance['type']
-			, 'width'			=> $instance['width']
-			, 'height'			=> $instance['height']
-			, 'show_faces'		=> $instance['show_faces']
-		);
-		
-		$default = 	array(
+		$params = 	array(
 			  'disable_priv'		=> 'true'
 			, 'current_element'		=> $args['widget_id']
 			, 'page_url'			=> $instance['page_url']
@@ -61,12 +51,10 @@ class priv_fb_widget extends WP_Widget {
 			, 'width'				=> $instance['width']
 			, 'height'				=> $instance['height']
 			, 'show_faces'			=> $instance['show_faces']
-			);
-		
-		$params = $default;
+		);
 		
 		wp_enqueue_script(	'load_scripts', plugin_dir_url(__FILE__) . 'templates/load_scripts.js', array('jquery'));
-		wp_localize_script( 'load_scripts', 'Option', $default );
+		wp_localize_script( 'load_scripts', 'Option', $params );
 
 		echo $after_widget;
 		
@@ -92,8 +80,8 @@ class priv_fb_widget extends WP_Widget {
 			  'title'				=> 'Privacy Friendly FB Widget'
 			, 'page_url'			=> 'https://www.facebook.com/pages/JonathanMH/159526834122370'
 			, 'type'				=> 'like'
-			, 'width'				=> '200'
-			, 'height'				=> '350'
+			, 'width'				=> '300'
+			, 'height'				=> '450'
 			, 'show_faces'			=> 'true'
 			);
 		
