@@ -39,6 +39,8 @@ echo "\r\n"
 $field_type_id = $this->get_field_id('type');
 $field_type = $this->get_field_name('type');
 ?>
+<p><label for=" <?php echo $field_type_id; ?>">
+<?php echo __('Social Plugin Type'); ?>: </label>
 <select name="<?php echo $field_type; ?>" id="<?php echo $field_type_id; ?>">
 <?php
 	foreach ($supported_types as $type_name => $type){
@@ -56,6 +58,7 @@ $field_type = $this->get_field_name('type');
 	};
 ?>
 </select>
+</p>
 
 <?php
 /* WIDTH */
