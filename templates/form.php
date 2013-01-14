@@ -61,6 +61,22 @@ $field_type = $this->get_field_name('type');
 </p>
 
 <?php
+/* PLACEHOLDER */
+$field_placeholder_id = $this->get_field_id('placeholder');
+$field_placeholder = $this->get_field_name('placeholder');
+echo "\r\n"
+	.'<p><label for="'
+	.$field_placeholder_id
+	.'">'
+	.__('Placeholder')
+	.': </label><textarea style="width:100%" rows="6" id="'
+	.$field_placeholder_id
+	.'" name="'
+	.$field_placeholder.'">'
+	.esc_attr( $instance['placeholder'] )
+	. '</textarea></p>';
+
+
 /* WIDTH */
 $field_width_id = $this->get_field_id('width');
 $field_width = $this->get_field_name('width');
