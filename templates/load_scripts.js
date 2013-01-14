@@ -29,6 +29,7 @@ jQuery(document).ready(function() {
 			loadWidget();
 		}
 		loaded = true;
+		return false;
 	});
 		
 	if (Option.disable_priv === 'true') {
