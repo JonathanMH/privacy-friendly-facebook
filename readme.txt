@@ -1,6 +1,6 @@
 === Privacy Friendly Facebook ===
 Contributors: JonathanMH
-Donate link: (will appear as flattr button in blogpost)
+Donate link: http://jonathanmh.com/wordpress-widget-privacy-friendly-facebook-social-plugins/
 Tags: facebook, widget, social, social plugins, privacy
 Requires at least: 2.8
 Tested up to: 3.5
@@ -8,20 +8,22 @@ Stable tag: 0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows the placement of [facebook social plugins](https://developers.facebook.com/docs/plugins/) in widget areas, that load on user interaction to protect their privacy
+This plugin allows the placement of Facebook Social Plugins in widget areas, that load on user interaction to protect their privacy and speed up page load.
 
 == Description ==
+
+This plugin allows the placement of [facebook social plugins](https://developers.facebook.com/docs/plugins/) in widget areas, that load on user interaction to protect their privacy and speed up page load.
 
 The purpose of lazy loading on user interaction has positive impact on the site performance, also it allows your users to benefit from facebook plugins, like liking your page, yet doesn't force them to let facebook know, that they are browsing your site.
 
 An inspiration to this has been this plugin: http://yro.slashdot.org/story/11/09/03/0115241/heises-two-clicks-for-more-privacy-vs-facebook
 
-=== Supported Facebook Social Plugins ===
+== Supported Facebook Social Plugins ==
 
 * [Like Button](https://developers.facebook.com/docs/reference/plugins/like/)
 * [Like Box](https://developers.facebook.com/docs/reference/plugins/like-box/)
 
-=== Right now you can ===
+== Right now you can ==
 
 * define the facebook page url
 * choose type of facebook social plugin to load
@@ -46,7 +48,7 @@ I plan to increase the functionality with:
 
 Yes.
 
-=== Will facebook receive any data about my users? ===
+== Will facebook receive any data about my users? ==
 
 Only if they deliberately load the respective widget or you disable the feature for delaying the load until user interaction.
 
@@ -58,6 +60,7 @@ The facebook icon, that is showing by default is made by the guys at [design dec
 1. This shows the widget in the backend and the options the user has.
 2. This shows the output of the widget in the twenty twelve theme.
 3. This shows the output of the widget when the user has clicked the button.
+5. This shows the like box instead of the like widget.
 
 == Changelog ==
 

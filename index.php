@@ -1,7 +1,7 @@
 <?php
 /*
 	Plugin Name: Privacy Friendly Facebook
-	Plugin URI: ?
+	Plugin URI: http://jonathanmh.com/wordpress-widget-privacy-friendly-facebook-social-plugins/
 	Description: Plugin for displaying a facebook plugin in a widget area after user clicks load
 	Author: Jonathan M. Hethey
 	Version: 0.1
