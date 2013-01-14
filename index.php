@@ -35,9 +35,12 @@ class priv_fb_widget extends WP_Widget {
 			echo $after_title;
 		};
 		
+		
 		/* create element, that the facebook plugin will be appended to */
 		echo '<div style="width: 100%;" id="fb_container'. $args['widget_id'] . '">'
-			.'<a class="load" href="#">Like on facebook</a></div>';
+			. '<a class="load" href="#">'
+			. $instance['placeholder']
+			. '</a></div>';
 		
 		$params = 	array(
 			  'current_element'		=> 'fb_container' . $args['widget_id']
@@ -50,6 +53,8 @@ class priv_fb_widget extends WP_Widget {
 		);
 		
 		wp_enqueue_script(	'load_scripts', plugin_dir_url(__FILE__) . 'templates/load_scripts.js', array('jquery'));
+		wp_register_style( 'fb_privacy_friendly', plugins_url('css/fb_privacy_friendly.css', __FILE__) );
+		wp_enqueue_style( 'fb_privacy_friendly' );
 		wp_localize_script( 'load_scripts', 'Option', $params );
 
 		echo $after_widget;
@@ -59,6 +64,7 @@ class priv_fb_widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['page_url'] = strip_tags($new_instance['page_url']);
+		$instance['placeholder'] = $new_instance['placeholder'];
 		$instance['type'] = strip_tags($new_instance['type']);
 		$instance['width'] = strip_tags($new_instance['width']);
 		$instance['height'] = strip_tags($new_instance['height']);
@@ -79,6 +85,7 @@ class priv_fb_widget extends WP_Widget {
 			, 'width'				=> '300'
 			, 'height'				=> '450'
 			, 'show_faces'			=> 'true'
+			, 'placeholder'			=> '<img src="' . plugin_dir_url(__FILE__) . 'images/facebook.png" style="margin:{0 auto;} display:{block;}" />'
 			);
 		
 		$supported_types = array(
