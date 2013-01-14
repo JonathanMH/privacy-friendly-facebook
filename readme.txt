@@ -16,7 +16,12 @@ The purpose of lazy loading on user interaction has positive impact on the site 
 
 An inspiration to this has been this plugin: http://yro.slashdot.org/story/11/09/03/0115241/heises-two-clicks-for-more-privacy-vs-facebook
 
-Right now you can:
+=== Supported Facebook Social Plugins ===
+
+* [Like Button](https://developers.facebook.com/docs/reference/plugins/like/)
+* [Like Box](https://developers.facebook.com/docs/reference/plugins/like-box/)
+
+=== Right now you can ===
 
 * define the facebook page url
 * choose type of facebook social plugin to load
@@ -51,15 +56,16 @@ The facebook icon, that is showing by default is made by the guys at [design dec
 == Screenshots ==
 
 1. This shows the widget in the backend and the options the user has.
-2. This shows the output of the widget in the twenty eleven theme.
+2. This shows the output of the widget in the twenty twelve theme.
+3. This shows the output of the widget when the user has clicked the button.
 
 == Changelog ==
 
 = 0.1 =
-2013-1-10
+2013-1-14
 
 Initial release
 
 
 == Suggestions welcome ==
-I'm very open to suggestions at this early stage and would like to hear your input. Write me or contact me through http://jonathanmh.com
+I'm very open to suggestions at this early stage and would like to hear your input. Write me or contact me through [jonathanmh.com](http://jonathanmh.com/)

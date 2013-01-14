@@ -94,6 +94,7 @@ echo "\r\n"
 	.'" /></p>';
 
 /* HEIGHT */
+
 $field_height_id = $this->get_field_id('height');
 $field_height = $this->get_field_name('height');
 echo "\r\n"
@@ -108,6 +109,7 @@ echo "\r\n"
 	.'" value="'
 	.esc_attr( $instance['height'] )
 	.'" /></p>';
+
 
 /* SHOW FACES */
 $field_show_faces_id = $this->get_field_id('show_faces');
@@ -131,4 +133,52 @@ echo "\r\n"
 	.$field_show_faces_id
 	.'">'
 	.__('Show Faces')
+	.' </label></p>';
+
+/* SHOW Stream */
+$field_show_stream_id = $this->get_field_id('show_stream');
+$field_show_stream = $this->get_field_name('show_stream');
+
+if ($instance['show_stream'] == 'true'){
+	$checked = 'checked="checked"';
+}
+else {
+	$checked = '';
+}
+
+echo "\r\n"
+	.'<p><input type="checkbox" id="'
+	.$field_show_stream_id
+	.'" name="'
+	.$field_show_stream
+	.'" value="true"'
+	.$checked
+	.'/> <label for="'
+	.$field_show_stream_id
+	.'">'
+	.__('Show Stream')
+	.' </label></p>';
+
+/* SHOW HEADER */
+$field_show_header_id = $this->get_field_id('show_header');
+$field_show_header = $this->get_field_name('show_header');
+
+if ($instance['show_header'] == 'true'){
+	$checked = 'checked="checked"';
+}
+else {
+	$checked = '';
+}
+
+echo "\r\n"
+	.'<p><input type="checkbox" id="'
+	.$field_show_header_id
+	.'" name="'
+	.$field_show_header
+	.'" value="true"'
+	.$checked
+	.'/> <label for="'
+	.$field_show_header_id
+	.'">'
+	.__('Show Header')
 	.' </label></p>';

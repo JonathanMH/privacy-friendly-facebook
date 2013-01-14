@@ -1,6 +1,6 @@
 <?php
 /*
-	Plugin Name: Privacy Friendly Facebook Plugins
+	Plugin Name: Privacy Friendly Facebook
 	Plugin URI: ?
 	Description: Plugin for displaying a facebook plugin in a widget area after user clicks load
 	Author: Jonathan M. Hethey
@@ -21,7 +21,7 @@ class priv_fb_widget extends WP_Widget {
 			'priv_fb_widget'
 			, 'Privacy Friendly FB widget'
 			, array(
-				'description' => 'Display a Privacy Friendly Facebook Plugin in any Widget Area'
+				'description' => 'Display a Privacy Friendly Facebook Social Plugin in any Widget Area'
 			)
 		);
 	}
@@ -37,7 +37,7 @@ class priv_fb_widget extends WP_Widget {
 		
 		
 		/* create element, that the facebook plugin will be appended to */
-		echo '<div style="width: 100%;" id="fb_container'. $args['widget_id'] . '">'
+		echo '<div id="fb_container'. $args['widget_id'] . '">'
 			. '<a class="load" href="#">'
 			. $instance['placeholder']
 			. '</a></div>';
@@ -49,6 +49,8 @@ class priv_fb_widget extends WP_Widget {
 			, 'width'				=> $instance['width']
 			, 'height'				=> $instance['height']
 			, 'show_faces'			=> $instance['show_faces']
+			, 'show_stream'			=> $instance['show_stream']
+			, 'show_header'			=> $instance['show_header']
 			, 'disable_priv'		=> 'false'
 		);
 		
@@ -74,6 +76,20 @@ class priv_fb_widget extends WP_Widget {
 		else {
 			$instance['show_faces'] = 'true';
 		}
+		
+		if (strip_tags($new_instance['show_stream']) != 'true'){
+			$instance['show_stream'] = 'false';
+		}
+		else {
+			$instance['show_stream'] = 'true';
+		}
+		
+		if (strip_tags($new_instance['show_header']) != 'true'){
+			$instance['show_header'] = 'false';
+		}
+		else {
+			$instance['show_header'] = 'true';
+		}
 		return $instance;
 	}
 
@@ -81,11 +97,13 @@ class priv_fb_widget extends WP_Widget {
 		$default = 	array(
 			  'title'				=> 'Privacy Friendly FB Widget'
 			, 'page_url'			=> 'https://www.facebook.com/pages/JonathanMH/159526834122370'
-			, 'type'				=> 'like'
-			, 'width'				=> '300'
+			, 'type'				=> 'like-box'
+			, 'width'				=> '292'
 			, 'height'				=> '450'
 			, 'show_faces'			=> 'true'
 			, 'placeholder'			=> '<img src="' . plugin_dir_url(__FILE__) . 'images/facebook.png" style="margin:{0 auto;} display:{block;}" />'
+			, 'show_stream'			=> 'false'
+			, 'show_header'			=> 'false'
 			);
 		
 		$supported_types = array(
