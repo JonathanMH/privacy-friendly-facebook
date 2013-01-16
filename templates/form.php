@@ -17,6 +17,30 @@ echo "\r\n"
 	.esc_attr( $instance['title'] )
 	.'" /></p>';
 
+/* DISABLE PRIV */
+$field_disable_priv_id = $this->get_field_id('disable_priv');
+$field_disable_priv = $this->get_field_name('disable_priv');
+
+if ($instance['disable_priv'] == 'true'){
+	$checked = 'checked="checked"';
+}
+else {
+	$checked = '';
+}
+
+echo "\r\n"
+	.'<p><input type="checkbox" id="'
+	.$field_disable_priv_id
+	.'" name="'
+	.$field_disable_priv
+	.'" value="true"'
+	.$checked
+	.'/> <label for="'
+	.$field_disable_priv_id
+	.'">'
+	.__('Disable Privacy Protection and load directly')
+	.' </label></p>';
+
 
 /* PAGE URL */
 $field_page_url_id = $this->get_field_id('page_url');

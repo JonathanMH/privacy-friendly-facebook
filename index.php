@@ -51,7 +51,7 @@ class priv_fb_widget extends WP_Widget {
 			, 'show_faces'			=> $instance['show_faces']
 			, 'show_stream'			=> $instance['show_stream']
 			, 'show_header'			=> $instance['show_header']
-			, 'disable_priv'		=> 'false'
+			, 'disable_priv'		=> $instance['disable_priv']
 		);
 		
 		wp_enqueue_script(	'load_scripts', plugin_dir_url(__FILE__) . 'templates/load_scripts.js', array('jquery'));
@@ -65,6 +65,12 @@ class priv_fb_widget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
+		if (strip_tags($new_instance['disable_priv']) != 'true'){
+			$instance['disable_priv'] = 'false';
+		}
+		else {
+			$instance['disable_priv'] = 'true';
+		}
 		$instance['page_url'] = strip_tags($new_instance['page_url']);
 		$instance['placeholder'] = $new_instance['placeholder'];
 		$instance['type'] = strip_tags($new_instance['type']);
@@ -96,6 +102,7 @@ class priv_fb_widget extends WP_Widget {
 	function form($instance) {
 		$default = 	array(
 			  'title'				=> 'Privacy Friendly FB Widget'
+			, 'disable_priv'		=> 'false'
 			, 'page_url'			=> 'https://www.facebook.com/pages/JonathanMH/159526834122370'
 			, 'type'				=> 'like-box'
 			, 'width'				=> '292'
