@@ -4,7 +4,7 @@ Donate link: http://jonathanmh.com/wordpress-widget-privacy-friendly-facebook-so
 Tags: facebook, widget, social, social plugins, privacy
 Requires at least: 2.8
 Tested up to: 3.5
-Stable tag: 0.1
+Stable tag: 0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,7 @@ Right now you can:
 * define height and width
 * enable/disable: facepile, stream of posts
 * define colours
+* disable click to load
 
 I plan to increase the functionality with:
 
@@ -67,6 +68,11 @@ Only if they deliberately load the respective widget or you disable the feature 
 5. This shows the like box instead of the like widget.
 
 == Changelog ==
+
+= 0.11 =
+2013-1-16
+
+added option to override lazy load
 
 = 0.1 =
 2013-1-14
